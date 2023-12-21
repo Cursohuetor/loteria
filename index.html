@@ -4,91 +4,132 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Comprobador de Lotería</title>
-  <style type="text/css">
-*{
-    margin:0px;
-    padding: 0px;
-}
+  <style>
+
 body{
-    background-image:url("fondo.jpg");
+    background-image: url("1.jpg") ;
     background-repeat: no-repeat;
-    background-attachment: fixed;
     background-size: cover;
-    font-family: arial;
-}
-#container{
-    border-radius: 5px;
-    padding: 5px;
-    text-align: center;
-    margin-top:150px ;
-    color: black;
-    background: rgb(247,246,247);
-    background: radial-gradient(circle, rgba(247,246,247,0.6595238095238095) 59%, rgba(195,194,194,1) 100%);
-}
-footer{
-    background-color: black;
-    color:white;
+    background-position: center center;
+    background-attachment: fixed;   
+    margin-top: 0px auto;
     
-    bottom: 0;
-    width: 100%;
-    font-size: 1em;
-    text-align: center;
-    height: 100px;
 }
-button.comprobar{
+
+#container{
+    border-radius: 30px 0 30px 0;
+    font-family:Arial black ;
+    background-size: cover;
+    text-align: center ;
+    margin:10px auto;
+    border: 5px solid black;
+    background: rgb(0,10,36);
+    background: linear-gradient(90deg, rgba(0,10,36,1) 1%, rgba(60,9,121,1) 41%, rgba(255,0,35,1) 100%);
+    color: white;
+    padding: 10px;
+    width: 60%;
+    margin-bottom: auto;
+  
+  
+}
+h2.uno{
+    border-radius: 10px ;
+    border: 3px solid black;
+    background-color:#3a106c ;
+
+}
+
+button.dos{
+    margin: 7px;
+    border: 3px solid black;
+    background-color: #3b07b5;
+    color: white;
+    padding: 10px;
+
+}
+
+button.dos:hover{
     margin: 5px;
-    padding: 20px;
-    border: solid #dbd80b 5px;
-    border-radius: 500px;
-    font-weight: bolder;
-    font-size: 1.5em;
-    margin-top: 10px;
-    background: rgb(195,194,194);
-    background: radial-gradient(circle, rgba(195,194,194,1) 0%, rgba(4,119,43,1) 100%);
+    border: 3px solid black;
+    background-color: red;
+    color: white;
+    padding: 10px;
 }
-button.comprobar:hover{
-    border: solid #e90e0e 5px;
+
+footer{
+    background: rgb(0,10,36);
+    background: linear-gradient(90deg, rgba(0,10,36,1) 17%, rgba(6,21,98,1) 50%, rgba(255,0,35,1) 100%);
+    color: white;
+    text-align: center;
+    width: 100%;
+    position: absolute;
+    bottom: 0; 
+    font-family: Arial black; 
+
+
 }
-label,input{
-    padding:5px;
-    margin-bottom: 5px;
-    font-size: 1.2em;
-    border-radius: 5px;
+input{
+    font-family: Arial black;
+    border-radius: 8px;
+    border: 3px solid black;
 }
-h2{
-    margin-bottom: 10px;
-    border-bottom: solid #04772b 2px;
-}           
-  </style>
+img.logo{
+    width: 130px;
+    height: 130px;
+    display: flex;
+}
+img.log1{
+    width: 130px;
+    height: 130px;  
+}
+div.logos{
+
+    justify-content: space-between;
+    display: flex;
+}
+
+
+</style>
 </head>
 <body>
-
-  <div id="container">
-    <h2>Comprobador de Lotería</h2>
+    <div id="container">
+        <div class="logos">
+        <img src="2.png" class="logo">
+        <img src="3.png" class="logo1">
+        </div>
+    <h2 class="uno">Comprobador de Lotería</h2>
 
     <!-- Campos de entrada para los cinco números de premio -->
     <label for="premio1">Primer premio:</label>
     <input type="text" id="premio1" placeholder="Ejemplo: 12345">
 <br>
+<br>
     <label for="premio2">Segundo premio:</label>
     <input type="text" id="premio2" placeholder="Ejemplo: 23451">
+<br>
 <br>
     <label for="premio3">Tercer premio:</label>
     <input type="text" id="premio3" placeholder="Ejemplo: 34512">
 <br>
+<br>
     <label for="premio4">Cuarto premio:</label>
     <input type="text" id="premio4" placeholder="Ejemplo: 45123">
 <br>
+<br>
     <label for="premio5">Quinto premio:</label>
     <input type="text" id="premio5" placeholder="Ejemplo: 51234">
+<br>   
 <br>
-    <button class="comprobar" onclick="comprobarNumero()">Comprobar</button>
-    <div id="result"></div>
-  </div>
- <footer>Realizado por las alumnas y alumnos del programa de empleo y formación Huétor Tájar 5.0<br>
-    <img src="oal.png" height="50px">
-    <img src="logo.png" height="50px">
- </footer>
+
+    <button onclick="comprobarNumero()" class="dos">Comprobar</button>
+
+<div id="result"></div>
+</div>
+
+
+<footer><p> Diseñado por las alumnas y alumnos del Programa de Empleo y Formación  <br>Huétor Tájar 5.0</p>
+</footer>
+
 <script>
     // Lista de números premiados
     var numerosPremiados = ["09086", "22616", "78547", "25995", "48287", "05655", "16601", "96418", "37974", "30799", "12244", "49219", "09841", "01041", "30799", "95648", "76649", "88999", "21420", "72261", "82098", "37152", "31127", "04553", "16814", "26925"];
@@ -133,6 +174,5 @@ h2{
   </script>
 
 
-</body> 
-
+</body>
 </html>
