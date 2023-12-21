@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Comprobador de Lotería</title>
+  <link rel="stylesheet" href="estilos.css">
+  <style type="text/css">
+      body{
+    text-align:center;
+    margin-top:50px;
+    background-image:url(navidad.jpg);
+    background-size:cover;
+    background-repeat:no-repeat;
+    background-attachment:fixed;
+    background-position:center;
+}
+#container{
+    margin:0 auto;
+    font-size:20px;
+    color:lightgreen;
+}
+h2{
+    color:white;
+    padding:20px;
+    font-size:30px;
+}
+.boton{
+    margin-top: 20px;
+    border-radius: 5px;
+    padding:10px 15px;
+    font-size:30px;
+    background:black;
+    color:white;
+    background-image:url(navifondo.gif);
+    background-attachment:fixed;
+}
+.boton2{
+  padding: 10px 15px;
+  font-size:20px;
+  background:#FFD700;
+  box-shadow: 0 0 30px #fff;;
+  color:rgb(42, 41, 41);  
+  border-radius: 50px; 
+}
+.parpadea {
+  
+  animation-name: parpadeo;
+  animation-duration: 3s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+
+  -webkit-animation-name:parpadeo;
+  -webkit-animation-duration: 3s;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+}
+
+@-moz-keyframes parpadeo{  
+  0% { opacity: 1.0; }
+  50% { opacity: 0.5; }
+  100% { opacity: 1.0; }
+}
+
+@-webkit-keyframes parpadeo {  
+  0% { opacity: 1.0; }
+  50% { opacity: 0.5; }
+   100% { opacity: 1.0; }
+}
+
+@keyframes parpadeo {  
+  0% { opacity: 1.0; }
+   50% { opacity: 0.5; }
+  100% { opacity: 1.0; }
+}
+footer{
+    color:white;
+    background: rgb(131,58,180);
+    background: linear-gradient(0deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+}
+.cyan{
+    color:black;
+    font-size:11px;
+    background:pink;
+    width:80% ;
+    margin: 0 auto;
+}
+.participantes{
+      text-align: right;
+    }
+    
+  </style>
+</head>
+<body>
+  <div id="container">
+    <img width="200px" src="gorrito-de-navidad.gif">
+    <h2>Comprobador de Lotería</h2>
+    <p class="cyan">¡AVISO! Éste programa ya tiene introducidos los números que juega el OAL. Por lo tanto NO escribas tu número.
+    Introduce SOLO los premios que vayan cantando los niños y así sabrás si alguno de los tuyos han sido premiados.</p>
+    <!-- Campos de entrada para los cinco números de premio -->
+    <label for="premio1">Primer premio:</label>
+    <input type="text" id="premio1" placeholder="Ejemplo: 12345">
+<br>
+    <label for="premio2">Segundo premio:</label>
+    <input type="text" id="premio2" placeholder="Ejemplo: 23451">
+<br>
+    <label for="premio3">Tercer premio:</label>
+    <input type="text" id="premio3" placeholder="Ejemplo: 34512">
+<br>
+    <label for="premio4">Cuarto premio:</label>
+    <input type="text" id="premio4" placeholder="Ejemplo: 45123">
+<br>
+    <label for="premio5">Quinto premio:</label>
+    <input type="text" id="premio5" placeholder="Ejemplo: 51234">
+<br>
+    <button class="boton" onclick="comprobarNumero()">Comprobar</button>
+    
+    <div class="participantes">
+     <button class="boton2 parpadea" onclick="alert('Sandra: 09086 , Noe: 22616 , Nati: 78547 , Fran: 25995 , Sara: 48287 , Cristina: 05655 , Elena: 16601 , Aida: 96418 , Fabiola: 37974 , Benoit: 30799 , Julián: 12244 , Antonio Machado: 49219 , Ana: 09841 , Javi: 01041 , Adolfo: 30799 , Rafa: 95648 , Alicia: 07649 , Mª Carmen Chamorro: 88999 , Juanma: 21420 , Irene: 72261 , Juan Garde: 82098 , Emilio: 37152 , Fernando: 31127 , Estefanía: 04553 , Susana: 16814 , Inma Núñez: 26925')">Números y Participantes</button>
+   </div>
+    <br>
+    <br>
+    <div id="result"></div>
+  </div>
+    <div>
+        <img width="150px" src="logo.png"><img width="150px" src="loguito.png">
+    </div>
+  <footer>
+      <p>Diseñado por los alumnos del programa de Empleo y Formación de Huétor Tájar 5.0</p>
+  </footer>
+  <script>
+    // Lista de números premiados
+    var numerosPremiados = ["09086", "22616", "78547", "25995", "48287", "05655", "16601", "96418", "37974", "30799", "12244", "49219", "09841", "01041", "30799", "95648", "76649", "88999", "21420", "72261", "82098", "37152", "31127", "04553", "16814", "26925"];
+
+    function comprobarNumero() {
+      // Obtener los números ingresados por el usuario
+      var premio1 = document.getElementById("premio1").value;
+      var premio2 = document.getElementById("premio2").value;
+      var premio3 = document.getElementById("premio3").value;
+      var premio4 = document.getElementById("premio4").value;
+      var premio5 = document.getElementById("premio5").value;
+
+      // Limpiar resultados anteriores
+      document.getElementById("result").innerText = "";
+
+      // Comprobar si algún número es premiado
+      if (numerosPremiados.includes(premio1)) {
+        document.getElementById("result").innerText += "¡Felicidades! Tu número del primer premio ha sido premiado.\n";
+      }
+
+      if (numerosPremiados.includes(premio2)) {
+        document.getElementById("result").innerText += "¡Felicidades! Tu número del segundo premio ha sido premiado.\n";
+      }
+
+      if (numerosPremiados.includes(premio3)) {
+        document.getElementById("result").innerText += "¡Felicidades! Tu número del tercer premio ha sido premiado.\n";
+      }
+
+      if (numerosPremiados.includes(premio4)) {
+        document.getElementById("result").innerText += "¡Felicidades! Tu número del cuarto premio ha sido premiado.\n";
+      }
+
+      if (numerosPremiados.includes(premio5)) {
+        document.getElementById("result").innerText += "¡Felicidades! Tu número del quinto premio ha sido premiado.\n";
+      }
+
+      // Mostrar mensaje si ningún número es premiado
+      if (document.getElementById("result").innerText === "") {
+        document.getElementById("result").innerText = "Lo siento, ninguno de tus números no ha sido premiado. Sigue intentándolo.";
+      }
+    }
+  </script>
+</body>
+</html>
