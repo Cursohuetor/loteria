@@ -6,14 +6,15 @@
   <title>Comprobador de Lotería</title>
   <link rel="stylesheet" href="estilos.css">
   <style type="text/css">
-      body{
+  body{
     text-align:center;
-    margin-top:50px;
+    margin-top:40px;
     background-image:url(navidad.jpg);
     background-size:cover;
     background-repeat:no-repeat;
     background-attachment:fixed;
     background-position:center;
+    font-family: Arial, Helvetica, sans-serif;
 }
 #container{
     margin:0 auto;
@@ -22,12 +23,13 @@
 }
 h2{
     color:white;
-    padding:20px;
+    padding:5px;
     font-size:30px;
+    text-shadow: 3px 3px 3px rgba(28, 28, 28, 1);
 }
 .boton{
     margin-top: 20px;
-    border-radius: 5px;
+    border-radius: 10px;
     padding:10px 15px;
     font-size:30px;
     background:black;
@@ -80,50 +82,47 @@ footer{
 }
 .cyan{
     color:black;
-    font-size:11px;
+    font-size:13px;
     background:pink;
     width:80% ;
     margin: 0 auto;
 }
-.participantes{
-      text-align: right;
-    }
     
   </style>
 </head>
 <body>
   <div id="container">
     <img width="200px" src="gorrito-de-navidad.gif">
-    <h2>Comprobador de Lotería</h2>
+    <h2>Lotería OAL 2023</h2>
     <p class="cyan">¡AVISO! Éste programa ya tiene introducidos los números que juega el OAL. Por lo tanto NO escribas tu número.
     Introduce SOLO los premios que vayan cantando los niños y así sabrás si alguno de los tuyos han sido premiados.</p>
     <!-- Campos de entrada para los cinco números de premio -->
     <label for="premio1">Primer premio:</label>
-    <input type="text" id="premio1" placeholder="Ejemplo: 12345">
+    <input type="text" id="premio1" placeholder="...">
 <br>
     <label for="premio2">Segundo premio:</label>
-    <input type="text" id="premio2" placeholder="Ejemplo: 23451">
+    <input type="text" id="premio2" placeholder="...">
 <br>
     <label for="premio3">Tercer premio:</label>
-    <input type="text" id="premio3" placeholder="Ejemplo: 34512">
+    <input type="text" id="premio3" placeholder="...">
 <br>
     <label for="premio4">Cuarto premio:</label>
-    <input type="text" id="premio4" placeholder="Ejemplo: 45123">
+    <input type="text" id="premio4" placeholder="...">
 <br>
     <label for="premio5">Quinto premio:</label>
-    <input type="text" id="premio5" placeholder="Ejemplo: 51234">
+    <input type="text" id="premio5" placeholder="...">
 <br>
     <button class="boton" onclick="comprobarNumero()">Comprobar</button>
-    
-    <div class="participantes">
+    <br>
+    <br>
      <button class="boton2 parpadea" onclick="alert('Sandra: 09086 , Noe: 22616 , Nati: 78547 , Fran: 25995 , Sara: 48287 , Cristina: 05655 , Elena: 16601 , Aida: 96418 , Fabiola: 37974 , Benoit: 30799 , Julián: 12244 , Antonio Machado: 49219 , Ana: 09841 , Javi: 01041 , Adolfo: 30799 , Rafa: 95648 , Alicia: 07649 , Mª Carmen Chamorro: 88999 , Juanma: 21420 , Irene: 72261 , Juan Garde: 82098 , Emilio: 37152 , Fernando: 31127 , Estefanía: 04553 , Susana: 16814 , Inma Núñez: 26925')">Números y Participantes</button>
-   </div>
+   
     <br>
     <br>
     <div id="result"></div>
   </div>
     <div>
-        <img width="150px" src="logo.png"><img width="150px" src="loguito.png">
+        <img width="150px" src="logo.png"><img width="100px" src="loguito.png">
     </div>
   <footer>
       <p>Diseñado por los alumnos del programa de Empleo y Formación de Huétor Tájar 5.0</p>
